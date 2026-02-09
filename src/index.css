@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Aunty Burgers Design System - Warm, appetizing Nigerian burger joint */
+
+@layer base {
+:root {
+/* Navy blue brand - from menu images */
+--background: 40 33% 97%;
+--foreground: 215 50% 15%;
+
+--card: 0 0% 100%;
+--card-foreground: 215 50% 15%;
+
+--popover: 0 0% 100%;
+--popover-foreground: 215 50% 15%;
+
+/* Navy blue primary */
+--primary: 215 50% 25%;
+--primary-foreground: 40 33% 97%;
+
+/* Warm cream secondary */
+--secondary: 40 33% 94%;
+--secondary-foreground: 215 50% 25%;
+
+--muted: 40 20% 92%;
+--muted-foreground: 215 20% 45%;
+
+/* Golden amber accent - burger warmth */
+--accent: 35 90% 52%;
+--accent-foreground: 215 50% 15%;
+
+/* Red for CTAs - appetite stimulating */
+--destructive: 0 72% 51%;
+--destructive-foreground: 0 0% 100%;
+
+--border: 40 20% 88%;
+--input: 40 20% 88%;
+--ring: 215 50% 25%;
+
+--radius: 0.75rem;
+
+/* Custom brand colors */
+--brand-navy: 215 50% 25%;
+--brand-navy-dark: 215 55% 18%;
+--brand-cream: 40 33% 97%;
+--brand-gold: 35 90% 52%;
+--brand-red: 0 72% 51%;
+--brand-warm-white: 40 40% 99%;
+
+/* Shadows */
+--shadow-soft: 0 4px 20px -4px hsl(215 50% 25% / 0.1);
+--shadow-elevated: 0 8px 30px -6px hsl(215 50% 25% / 0.15);
+--shadow-card: 0 2px 12px -2px hsl(215 50% 25% / 0.08);
+
+--sidebar-background: 0 0% 98%;
+--sidebar-foreground: 240 5.3% 26.1%;
+--sidebar-primary: 240 5.9% 10%;
+--sidebar-primary-foreground: 0 0% 98%;
+--sidebar-accent: 240 4.8% 95.9%;
+--sidebar-accent-foreground: 240 5.9% 10%;
+--sidebar-border: 220 13% 91%;
+--sidebar-ring: 217.2 91.2% 59.8%;
+
+/* WhatsApp green */
+--whatsapp: 142 70% 45%;
+--whatsapp-hover: 142 70% 38%;
+
+
+}
+
+.dark {
+--background: 215 55% 8%;
+--foreground: 40 33% 97%;
+
+--card: 215 50% 12%;
+--card-foreground: 40 33% 97%;
+
+--popover: 215 50% 12%;
+--popover-foreground: 40 33% 97%;
+
+--primary: 40 33% 97%;
+--primary-foreground: 215 50% 15%;
+
+--secondary: 215 40% 18%;
+--secondary-foreground: 40 33% 97%;
+
+--muted: 215 40% 18%;
+--muted-foreground: 40 20% 65%;
+
+--accent: 35 90% 52%;
+--accent-foreground: 215 50% 15%;
+
+--destructive: 0 62% 40%;
+--destructive-foreground: 0 0% 100%;
+
+--border: 215 40% 20%;
+--input: 215 40% 20%;
+--ring: 40 33% 90%;
+
+--sidebar-background: 240 5.9% 10%;
+--sidebar-foreground: 240 4.8% 95.9%;
+--sidebar-primary: 224.3 76.3% 48%;
+--sidebar-primary-foreground: 0 0% 100%;
+--sidebar-accent: 240 3.7% 15.9%;
+--sidebar-accent-foreground: 240 4.8% 95.9%;
+--sidebar-border: 240 3.7% 15.9%;
+--sidebar-ring: 217.2 91.2% 59.8%;
+
+
+}
+}
+
+@layer base {
+
+{
+@apply border-border;
+}
+
+body {
+@apply bg-background text-foreground font-sans antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+@apply font-display tracking-wide;
+}
+}
+
+@layer components {
+/* Hero button variants */
+.btn-hero {
+@apply bg-brand-gold text-brand-navy font-semibold px-8 py-4 rounded-full
+transition-all duration-300 hover:scale-105 hover:shadow-elevated
+active:scale-95;
+}
+
+.btn-hero-outline {
+@apply border-2 border-brand-cream text-brand-cream font-semibold px-8 py-4 rounded-full
+transition-all duration-300 hover:bg-brand-cream hover:text-brand-navy
+active:scale-95;
+}
+
+/* Product card */
+.product-card {
+@apply bg-card rounded-xl overflow-hidden shadow-card transition-all duration-300
+hover:shadow-elevated hover:-translate-y-1;
+}
+
+/* Section styling */
+.section-padding {
+@apply py-16 md:py-24 px-4 md:px-8;
+}
+
+/* Text gradient */
+.text-gradient {
+@apply bg-gradient-to-r from-brand-navy to-brand-gold bg-clip-text text-transparent;
+}
+
+/* Overlay gradient */
+.overlay-gradient {
+background: linear-gradient(
+to bottom,
+hsl(215 50% 15% / 0.3) 0%,
+hsl(215 50% 15% / 0.7) 100%
+);
+}
+
+/* Container */
+.container-custom {
+@apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Category badge */
+.category-badge {
+@apply inline-flex items-center px-4 py-2 rounded-full bg-brand-navy text-brand-cream
+text-sm font-medium uppercase tracking-widest;
+}
+}
+
+@layer utilities {
+.bg-brand-navy {
+background-color: hsl(var(--brand-navy));
+}
+
+.bg-brand-navy-dark {
+background-color: hsl(var(--brand-navy-dark));
+}
+
+.bg-brand-cream {
+background-color: hsl(var(--brand-cream));
+}
+
+.bg-brand-gold {
+background-color: hsl(var(--brand-gold));
+}
+
+.bg-brand-red {
+background-color: hsl(var(--brand-red));
+}
+
+.bg-brand-warm-white {
+background-color: hsl(var(--brand-warm-white));
+}
+
+.text-brand-navy {
+color: hsl(var(--brand-navy));
+}
+
+.text-brand-navy-dark {
+color: hsl(var(--brand-navy-dark));
+}
+
+.text-brand-cream {
+color: hsl(var(--brand-cream));
+}
+
+.text-brand-gold {
+color: hsl(var(--brand-gold));
+}
+
+.text-brand-red {
+color: hsl(var(--brand-red));
+}
+
+.border-brand-navy {
+border-color: hsl(var(--brand-navy));
+}
+
+.border-brand-gold {
+border-color: hsl(var(--brand-gold));
+}
+
+.border-brand-cream {
+border-color: hsl(var(--brand-cream));
+}
+
+.shadow-soft {
+box-shadow: var(--shadow-soft);
+}
+
+.shadow-elevated {
+box-shadow: var(--shadow-elevated);
+}
+
+.shadow-card {
+box-shadow: var(--shadow-card);
+}
+
+/* Animation utilities */
+.animate-fade-up {
+animation: fadeUp 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+animation: scaleIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes scaleIn {
+from {
+opacity: 0;
+transform: scale(0.95);
+}
+to {
+opacity: 1;
+transform: scale(1);
+}
+}
+}
